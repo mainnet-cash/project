@@ -17,8 +17,9 @@ Errors:
 Funding
 -----
 
-1. [750.28325111 BCH at bitcoincash:qqgae2xl2rx7zwg4nuwv645u9pfkydrp45cy0wqfx6](https://explorer.bitcoin.com/bch/address/bitcoincash:qqgae2xl2rx7zwg4nuwv645u9pfkydrp45cy0wqfx6)
-collected via https://flipstarter.mainnet.cash/ (
+| Balance | Wallet | |
+|---|---|---|
+| 750.28325111 BCH | [bitcoincash:qqg....qfx6](https://explorer.bitcoin.com/bch/address/bitcoincash:qqgae2xl2rx7zwg4nuwv645u9pfkydrp45cy0wqfx6) | collected via https://flipstarter.mainnet.cash/ |
 
 The spending will be public, but I'm yet to figure out where to publish it.
 
