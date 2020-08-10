@@ -223,11 +223,14 @@ To-do items (work in progress)
 This is an unsorted list of things and ideas that comprise the scope of the project.
 The will be converted to GitHub issues.
 
+```
 The documentation website
 Register Slack
 Servers?
 Each method should get corresponding REST API
+```
 
+```
 Prototype
   (using BITBOX, then integrate functions, libauth?)
   RegTestWallet(name) (Non-HD)
@@ -282,9 +285,11 @@ new MultisigWallet(2, 2, publicKeys);
 .cointext.send(['+15553333333', 1, 'USD']);
 
 .unnamedApp.send(['hello@read.cash', 100, 'USD'],
+```
 
 Video tutorials
 
+```
 Translations: (we need to decide which languages are actually needed somehow)
 - English
 - 中文
@@ -292,7 +297,9 @@ Translations: (we need to decide which languages are actually needed somehow)
 - Italiano
 - Tagalog
 - हिन्दी
+```
 
+```
 Other languages:
 - Browser + LocalStorage
 - node.js
@@ -304,7 +311,9 @@ Other languages:
 - C#
 - C++
 (thin wrappers, then native signing)
+```
 
+```
 expiring tips contract (?)
 CashScript/Spedn? (+sandbox, debugger?)
 
@@ -314,7 +323,10 @@ Reusable Payment Codes (?)
 CashAccounts (?)
 CashFusion (?)
 memo/member protocol
+```
 
+```
 Invite outside developers
 PR campaign
 Security audit (?)
+```
