@@ -12,7 +12,12 @@ Build a library as described on:
 - https://web.archive.org/web/20200810183217/https://mainnet.cash/2020-07-31
 
 Errors:
-`await wallet.send([[seller.depositAddress(), 0.01, 'USD']]);` should probably be `await wallet.send([seller.depositAddress(), [0.01, 'USD']]);`
+
+`await wallet.send([[seller.depositAddress(), 0.01, 'USD']]);` 
+
+should probably be 
+
+`await wallet.send([seller.depositAddress(), [0.01, 'USD']]);`
 
 Funding
 -----
