@@ -48,7 +48,7 @@ detailed enough, a bounty is assigned.
 
 A preliminary high-level list of things to do contains ~100 items, but 1) some of them are pretty big (like "Video Tutorials"), 
 and 2) I assume that for one task that
-I see there's at least 2-3 that I fail to see now, so I'll start with an conservative assumption that we have ~400 items in our to-do list.
+I see there's at least 2-3 that I fail to see now, so I'll start with a conservative assumption that we have ~400 items in our to-do list.
 
 Another thing is that there are things that are not in the list, but are still necessary, such as to pay for servers, video editing,
 video tutorials, donations to infrastructure projects or projects where you take a lot of code from, security audits, etc...
