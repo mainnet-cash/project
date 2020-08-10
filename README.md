@@ -185,6 +185,10 @@ single-binary, cross-platform, it supports web calls (via grpc-web) out of the b
 mostly everything we need for this library, and SLP tokens support is coming soon (even double-spend proofs are coming,
 which will be amazing for zero-conf).
 
+Another candidate could be Electrum servers (these power Electron Cash), but unfortunaltely they require at least 2
+components - electrum server and a node (like BCHD), which every developer would have to install to use it,
+so I'm leaning more towards using BCHD, since it's already sufficient (web+node) and self-contained single binary.
+
 By RegTestWallet I mean a non-HD wallet. Simple private key or seed phrase + derivation path wallet.
 The opposite would be RegTestHdWallet.
 
@@ -222,6 +226,10 @@ on anything like tokens (though this will probably require SLPDB instance), cont
 
 I'll be opening GitHub issues with tasks that need to be completed along with expected bounty and people are free to
 apply. (Remember though to complete the initial test first unless your name is well-known in BCH community)
+
+As soon as TypeScript/REST API is somewhat stable, we can invite collaborators to create thin wrappers in other languages.
+I hope that we could build some sort of a generator that will generate bindings from REST API definition (Swagger?)
+rather than writing each method by hand. But maybe it's an overkill.
 
 To-do items (work in progress)
 ------------------------------
@@ -339,3 +347,49 @@ Invite outside developers
 PR campaign
 Security audit (?)
 ```
+
+Technical notes
+---------------
+
+Running BCHD in RegTest mode:
+
+```
+Start a node:
+./bchd --regtest --rpclisten=:18334 --rpcuser=chris --rpcpass=letmein --miningaddr=bchreg:prc38tlqr6t5fk2nfcacp3w3hcljz4nj3sw247lksj
+
+Control the node:
+./bchctl --testnet -u chris -P letmein generate 101 
+# generates 101 block, sending mining rewards to the address above (allows spending mining rewards)
+```
+
+An example how to use BCHD's GRPC from JS:
+
+```
+import * as bchrpc from "grpc-bchrpc-web/pb/bchrpc_pb";
+const GrpcClient = require('grpc-bchrpc-web');
+
+export const host = 'bchd.fountainhead.cash';
+export const grpc = new GrpcClient.GrpcClient({ url: `https://${host}:443` });
+
+export function getAddressUtxos(grpc, { address, includeMempool }) {
+    const req = new bchrpc.GetAddressUnspentOutputsRequest();
+    req.setAddress(address);
+    if (includeMempool) {
+        req.setIncludeMempool(true);
+    }
+    return new Promise((resolve, reject) => {
+        grpc.client.getAddressUnspentOutputs(req, (err, data) => {
+            if (err !== null) { reject(err); } else { resolve(data); }
+        });
+    });
+}
+```
+
+Libraries:
+
+- https://github.com/simpleledgerinc/grpc-bchrpc-web (for browser)
+- https://github.com/simpleledgerinc/grpc-bchrpc-node (for node.js)
+
+GRPC API definition :
+
+https://github.com/gcash/bchd/blob/master/bchrpc/bchrpc.proto
