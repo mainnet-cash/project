@@ -223,6 +223,10 @@ To-do items (work in progress)
 This is an unsorted list of things and ideas that comprise the scope of the project.
 The will be converted to GitHub issues.
 
+These items were mostly collected from here:
+- https://web.archive.org/web/20200810182937/https://mainnet.cash/
+- https://web.archive.org/web/20200810183217/https://mainnet.cash/2020-07-31
+
 ```
 The documentation website
 Register Slack
